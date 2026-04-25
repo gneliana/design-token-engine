@@ -12,8 +12,8 @@ Figma (design), Java (token processing), and React (component library).
 ## What is a Design Token?
 
 A design token is a named variable that stores a visual design decision — like
-a color, a spacing value, or a font size. Instead of hardcoding `#0055FF` in
-every component, a team defines a token called `color.primary = #0055FF`.
+a color, a spacing value, or a font size. Instead of hardcoding #0055FF in
+every component, a team defines a token called color.primary = #0055FF.
 Every component references the token. When the color changes, every component
 updates automatically.
 
@@ -25,9 +25,23 @@ like Google (Material Design), Salesforce (Lightning), and IBM (Carbon).
 ## The Full Pipeline
 
 This project sits at the center of a three-layer design system pipeline:
-A designer changes a color in Figma → exports JSON → the Java engine processes
-and validates it → outputs CSS custom properties → every React component updates
-automatically. No manual find-and-replace across a codebase.
+
+    Figma Design System
+    (colors, spacing, typography designed visually)
+            |
+            | export tokens.json
+            v
+    Design Token Engine  <- this project
+    (Java CLI: ingest, validate, resolve, export)
+            |
+            | tokens.css / tokens.json / tokens.swift
+            v
+    React Portfolio Website
+    (components styled with token values, live theme switcher)
+
+A designer changes a color in Figma, exports JSON, the Java engine processes
+and validates it, outputs CSS custom properties, and every React component
+updates automatically. No manual find-and-replace across a codebase.
 
 ---
 
@@ -62,27 +76,29 @@ principles and design patterns.
 
 ## Project Structure
 
-````
-design-token-engine/
-  src/
-    main/
-      Main.java
-    token/
-      Token.java
-      TokenType.java
-      TokenGroup.java
-      TokenRegistry.java
-  lib/
-  docs/
-    architecture.svg
-  README.md
-```
+    design-token-engine/
+      src/
+        main/
+          Main.java
+        token/
+          Token.java
+          TokenType.java
+          TokenGroup.java
+          TokenRegistry.java
+      lib/
+      docs/
+        architecture.svg
+      README.md
 
-- **In a group?** No — solo project
-- **Programming language:** Java 17 (OpenJDK Temurin 17.0.16)
-- **GitHub repository:** https://github.com/gneliana/design-token-engine
-- **Entry point:** `src/main/Main.java`
-- **Hello World compiles and runs?** Yes
+---
+
+## Sprint 1 Checklist
+
+- In a group? No, solo project
+- Programming language: Java 17 (OpenJDK Temurin 17.0.16)
+- GitHub repository: https://github.com/gneliana/design-token-engine
+- Entry point: src/main/Main.java
+- Hello World compiles and runs? Yes
 
 ---
 
@@ -131,8 +147,8 @@ Claude's involvement included:
 
 All code was reviewed, compiled, and committed by Eliana Betancur. Every design
 decision was discussed and understood before implementation. The project concept
-— connecting a Java token engine to a Figma design system and React portfolio
-site — came from Eliana's own career goals and prior professional experience
+connecting a Java token engine to a Figma design system and React portfolio
+site came from Eliana's own career goals and prior professional experience
 working on design systems.
 
 Per the SE-350 syllabus, AI tools are listed under Required Technology and are
