@@ -61,9 +61,22 @@ principles and design patterns.
 ---
 
 ## Project Structure
----
 
-## Sprint 1 Checklist
+````
+design-token-engine/
+  src/
+    main/
+      Main.java
+    token/
+      Token.java
+      TokenType.java
+      TokenGroup.java
+      TokenRegistry.java
+  lib/
+  docs/
+    architecture.svg
+  README.md
+```
 
 - **In a group?** No — solo project
 - **Programming language:** Java 17 (OpenJDK Temurin 17.0.16)
