@@ -116,7 +116,7 @@ Claude's involvement included:
 - Generating the architecture SVG diagram in the README
 - Helping structure and write this README
 
-All code was reviewed, compiled, and committed by Eliana Gneli. Every design
+All code was reviewed, compiled, and committed by Eliana Betancur. Every design
 decision was discussed and understood before implementation. The project concept
 — connecting a Java token engine to a Figma design system and React portfolio
 site — came from Eliana's own career goals and prior professional experience
