@@ -100,3 +100,27 @@ portfolio website with a live light/dark theme switcher.
 ## Bugs / Notes
 
 None yet.
+
+---
+
+## AI Assistance Disclosure
+
+This project was developed with significant assistance from Claude (Anthropic),
+used as an AI pair-programming and mentorship tool throughout the course.
+
+Claude's involvement included:
+- Helping design the overall project architecture and pipeline vision
+- Explaining how design tokens connect to real-world UX engineering workflows
+- Suggesting which OOP design patterns fit each layer of the engine and why
+- Writing and explaining each Java class step by step
+- Generating the architecture SVG diagram in the README
+- Helping structure and write this README
+
+All code was reviewed, compiled, and committed by Eliana Gneli. Every design
+decision was discussed and understood before implementation. The project concept
+— connecting a Java token engine to a Figma design system and React portfolio
+site — came from Eliana's own career goals and prior professional experience
+working on design systems.
+
+Per the SE-350 syllabus, AI tools are listed under Required Technology and are
+permitted for use in this course.
