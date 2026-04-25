@@ -4,12 +4,63 @@ A Java-based CLI tool for managing, transforming, and exporting design tokens
 across formats (JSON, CSS, Swift). Built for SE-350 Object Oriented Software
 Development at DePaul University.
 
+This project is part of a larger end-to-end design system pipeline connecting
+Figma (design), Java (token processing), and React (component library).
+
+---
+
+## What is a Design Token?
+
+A design token is a named variable that stores a visual design decision — like
+a color, a spacing value, or a font size. Instead of hardcoding `#0055FF` in
+every component, a team defines a token called `color.primary = #0055FF`.
+Every component references the token. When the color changes, every component
+updates automatically.
+
+Design tokens are the foundation of scalable design systems used by companies
+like Google (Material Design), Salesforce (Lightning), and IBM (Carbon).
+
+---
+
+## The Full Pipeline
+
+This project sits at the center of a three-layer design system pipeline:
+A designer changes a color in Figma → exports JSON → the Java engine processes
+and validates it → outputs CSS custom properties → every React component updates
+automatically. No manual find-and-replace across a codebase.
+
+---
+
+## Why This Matters for UX Engineering
+
+UX Engineers bridge design and engineering. Design token tooling is a core part
+of that role at companies building large-scale design systems. Tools like
+Amazon Style Dictionary, Figma Tokens, and Theo solve this problem in
+JavaScript. This project explores the same problem space using Java OOP
+principles and design patterns.
+
 ---
 
 ## Architecture
 
 ![Design Token Engine Architecture](docs/architecture.svg)
 
+---
+
+## Design Patterns Used
+
+| Pattern | Where | Why |
+|---|---|---|
+| Builder | Token and TokenGroup construction | Step-by-step object creation |
+| Factory | Exporter creation | Pick the right exporter at runtime |
+| Strategy | Export algorithms | Swap CSS / JSON / Swift without changing core logic |
+| Composite | TokenGroup containing Tokens | Nest groups of tokens naturally |
+| Observer | ChangeNotifier | Broadcast token changes to dependents |
+| Command | Export and edit actions | Enable undo history across operations |
+
+---
+
+## Project Structure
 ---
 
 ## Sprint 1 Checklist
@@ -22,14 +73,27 @@ Development at DePaul University.
 
 ---
 
-## Project Structure
+## Sprint 2 Goal
+
+Build the core token model — Token, TokenType, TokenGroup, and TokenRegistry —
+so that tokens can be defined, organized into groups, stored, and retrieved.
+Demonstrate working token creation and display in Main.
 
 ---
 
-## Sprint 2 Goal
+## Future Sprints
 
-Build a working token definition system where tokens (color, spacing, typography)
-can be defined, grouped, and exported to multiple formats using OOP design patterns.
+- Sprint 3: Builder pattern + TokenResolver (alias resolution)
+- Sprint 4: Export layer (CSS, JSON, Swift) using Factory + Strategy patterns
+- Sprint 5: Observer + Command patterns, undo history, theme switching
+
+---
+
+## End Goal
+
+A working CLI demo that ingests a Figma token JSON file, resolves all token
+aliases, and exports a valid tokens.css file — which will power a React
+portfolio website with a live light/dark theme switcher.
 
 ---
 
